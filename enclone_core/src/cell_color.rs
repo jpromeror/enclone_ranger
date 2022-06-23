@@ -24,7 +24,7 @@
 
 use std::collections::HashMap;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorByIsotype {
     pub color: Vec<String>,
     pub show_legend: bool,
@@ -35,7 +35,7 @@ pub struct ColorByIsotype {
 // using the turbo color scheme.  If the value of a variable is unspecified for a given cell,
 // or not convertible to a number, black is used.
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorByVariableValue {
     pub var: String,
     pub display_var: String,
@@ -43,25 +43,25 @@ pub struct ColorByVariableValue {
     pub max: Option<f64>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorByCategoricalVariableValue {
     pub vars: Vec<String>,
     pub maxcat: usize,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorByDataset {}
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorBySample {
     pub by_meta: bool,
     pub specification: HashMap<String, String>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ColorByBarcodeSpecification {}
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum CellColor {
     Unspecified,
     ByIsotype(ColorByIsotype),

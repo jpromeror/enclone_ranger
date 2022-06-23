@@ -3,7 +3,7 @@
 use crate::defs::EncloneControl;
 use string_utils::{stringme, TextUtils};
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Debug)]
 pub struct LinearCondition {
     pub coeff: Vec<f64>,  // left hand side (lhs) coefficients
     pub var: Vec<String>, // left hand side variables (parallel to coefficients)

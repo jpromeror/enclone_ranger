@@ -53,7 +53,7 @@ pub const MAX_CDR3_DIFFS_TO_JOIN: usize = 5;
 
 // Clonotyping algorithm heuristics.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct ClonotypeHeuristics {
     pub max_diffs: usize,
     pub max_degradation: usize,
@@ -63,7 +63,7 @@ pub struct ClonotypeHeuristics {
 
 // Origin info data structure.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct OriginInfo {
     // parallel vectors
     pub descrips: Vec<String>,     // map dataset index to dataset long name
@@ -103,7 +103,7 @@ impl OriginInfo {
 
 // Miscellaneous general options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct GeneralOpt {
     pub pre: Vec<String>,
     pub indels: bool,
@@ -265,7 +265,7 @@ pub struct GeneralOpt {
 
 // Some plot options.  Note that plot options are not allowed to affect intermediate computation.
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Debug)]
 pub struct PlotOpt {
     pub cell_color: CellColor,
     pub plot_xy_filename: String,
@@ -295,7 +295,7 @@ pub struct PlotOpt {
 
 // Allele-finding algorithmic options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct AlleleAlgOpt {
     pub min_mult: usize,
     pub min_alt: usize,
@@ -303,7 +303,7 @@ pub struct AlleleAlgOpt {
 
 // Allele-finding print options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct AllelePrintOpt {
     pub con: bool,       // print alternate consensus sequences
     pub con_trace: bool, // tracing for con
@@ -311,7 +311,7 @@ pub struct AllelePrintOpt {
 
 // Data about alleles
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Debug)]
 pub struct AlleleData {
     pub alt_refs: Vec<(usize, usize, DnaString, usize, bool)>,
     pub var_pos: Vec<Vec<usize>>,
@@ -320,7 +320,7 @@ pub struct AlleleData {
 
 // Join printing options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct JoinPrintOpt {
     pub seq: bool,     // print sequences of contigs, before truncation to V..J
     pub ann: bool,     // print annotations of contigs
@@ -332,7 +332,7 @@ pub struct JoinPrintOpt {
 
 // Join algorithmic options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct JoinAlgOpt {
     pub max_score: f64,          // max score for join
     pub easy: bool,              // make joins even if core condition violated
@@ -362,7 +362,7 @@ pub struct JoinAlgOpt {
 // These fall into 2 categories: 1) on by default and 2) user-specified.
 // Note that ClonoFiltOpt options are not allowed to affect intermediate computation.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct ClonoFiltOptDefault {
     pub marked_b: bool, // only print clonotypes having a mark and which are typed as B cells
     pub donor: bool,    // allow cells from different donors to be placed in the same clonotype
@@ -384,7 +384,7 @@ pub struct ClonoFiltOptDefault {
     pub nmax: bool,                // turn off max contigs filter
 }
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct ClonoFiltOpt {
     pub ncells_low: usize,   // only show clonotypes with at least this many cells
     pub ncells_high: usize,  // only show clonotypes with at most this many cells
@@ -428,7 +428,7 @@ pub struct ClonoFiltOpt {
 
 // Clonotype printing options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct ClonoPrintOpt {
     pub bu: bool,                                      // print barcodes and UMI counts
     pub seqc: bool, // print V..J sequence for each chain if constant across clonotype
@@ -448,7 +448,7 @@ pub struct ClonoPrintOpt {
 
 // Clonotype grouping options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct ClonoGroupOpt {
     // SYMMETRIC AND ASYMMETRIC
     pub ngroup: bool,            // do not print group headers
@@ -490,7 +490,7 @@ pub struct ClonoGroupOpt {
 
 // Parseable output options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct ParseableOpt {
     pub pout: String,             // name of parseable output file
     pub pchains: String,          // number of chains to show in parseable output
@@ -504,7 +504,7 @@ pub struct ParseableOpt {
 
 // Computational performance options.
 
-#[derive(Default, PartialEq)]
+#[derive(Default, PartialEq, Debug)]
 pub struct PerfOpt {
     pub comp: bool,         // print computational performance stats
     pub comp2: bool,        // print more detailed computational performance stats
@@ -516,7 +516,7 @@ pub struct PerfOpt {
 // run of enclone.  If you add something to this, be sure to update the "changed" section in
 // enclone_server.rs, if needed.
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct EncloneControl {
     pub visual_mode: bool,                       // running as enclone visual
     pub perf_opt: PerfOpt,                       // computational performance options
