@@ -48,7 +48,7 @@ pub fn main_enclone_ranger(args: &Vec<String>) -> Result<(), String> {
     for arg in args {
         let mut arg = arg.as_str();
         if arg == "enclone" {
-            panic!("{:?}", args);
+            continue;
         }
         if arg.contains('=') {
             arg = arg.before("=");
@@ -65,6 +65,7 @@ pub fn main_enclone_ranger(args: &Vec<String>) -> Result<(), String> {
                 ok = true;
             }
         }
+        println!("found: {:?}", found);
         if !ok {
             panic!("Illegal argument {} passed to main_enclone_ranger.", arg);
         }
