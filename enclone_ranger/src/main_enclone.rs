@@ -65,13 +65,12 @@ pub fn main_enclone_ranger(args: &Vec<String>) -> Result<(), String> {
                 ok = true;
             }
         }
-        println!("found: {:?}", found);
         if !ok {
             panic!("Illegal argument {} passed to main_enclone_ranger.", arg);
         }
     }
     for (found, arg) in found.into_iter().zip(REQUIRED_ARGS.into_iter()) {
-        if found {
+        if !found {
             panic!(
                 "Required argument {} not passed to main_enclone_ranger",
                 arg
