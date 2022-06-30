@@ -44,10 +44,11 @@ pub fn main_enclone_ranger(args: &Vec<String>) -> Result<(), String> {
         "GAMMA_DELTA",
     ];
     let mut found = vec![false; REQUIRED_ARGS.len()];
+
     for arg in args {
         let mut arg = arg.as_str();
         if arg == "enclone" {
-            continue;
+            panic!("{:?}", args);
         }
         if arg.contains('=') {
             arg = arg.before("=");
