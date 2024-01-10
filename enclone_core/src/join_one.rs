@@ -802,7 +802,9 @@ pub fn join_one<'a>(
                     println!("X1Amino: {:?}",x1.seq_del_amino);
                     println!("X2Amino: {:?}",x2.seq_del_amino);
                     println!("CDR1 Start1: {:?}",cdr1_start1);
+                    println!("CDR1 Stop1: {:?}",cdr1_stop1);
                     println!("CDR1 Start2: {:?}",cdr1_start2);
+                    println!("CDR1 Stop2: {:?}",cdr1_stop2);
                     println!("len: {:?}",len);
                     for p in 0..len {
                         if x1.seq_del_amino[p + cdr1_start1] != x2.seq_del_amino[p + cdr1_start2] {
