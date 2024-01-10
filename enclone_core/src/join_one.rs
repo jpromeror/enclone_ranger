@@ -803,8 +803,7 @@ pub fn join_one<'a>(
                 println!("cdr1_stop1 = {:?}", cdr1_stop1);
                 println!("cdr1_start2 = {:?}", cdr1_start2);
                 println!("cdr1_stop2 = {:?}", cdr1_stop2);
-                println!("x1 = {:?} ",x1.seq_del_amino);
-                println!("x2 = {:?} ",x2.seq_del_amino);
+
 
                 
                 if cdr1_stop2 - cdr1_start2 == len {
