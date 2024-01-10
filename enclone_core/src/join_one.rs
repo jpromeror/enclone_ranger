@@ -797,15 +797,6 @@ pub fn join_one<'a>(
                 let cdr1_start2 = x2.cdr1_start.unwrap();
                 let cdr1_stop2 = x2.fr2_start.unwrap();
                 let len = cdr1_stop1 - cdr1_start1;
-
-
-                println!("cdr1_start1 = {:?}", cdr1_start1);
-                println!("cdr1_stop1 = {:?}", cdr1_stop1);
-                println!("cdr1_start2 = {:?}", cdr1_start2);
-                println!("cdr1_stop2 = {:?}", cdr1_stop2);
-
-
-                
                 if cdr1_stop2 - cdr1_start2 == len {
                     let mut diffs = 0;
                     for p in 0..len {
@@ -829,6 +820,7 @@ pub fn join_one<'a>(
                 // this was violated once when using IMGT reference
                 if cdr2_start1 <= cdr2_stop1 {
                     let len = cdr2_stop1 - cdr2_start1;
+                    println!("len = {:?}", len);
                     if cdr2_stop2 - cdr2_start2 == len {
                         let mut diffs = 0;
                         for p in 0..len {
