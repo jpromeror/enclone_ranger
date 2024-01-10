@@ -799,7 +799,6 @@ pub fn join_one<'a>(
                 let len = cdr1_stop1 - cdr1_start1;
                 if cdr1_stop2 - cdr1_start2 == len {
                     let mut diffs = 0;
-                    println!("Iter: {:?}",p);
                     println!("X1Amino: {:?}",x1.seq_del_amino);
                     println!("X2Amino: {:?}",x2.seq_del_amino);
                     println!("CDR1 Start1: {:?}",cdr1_start1);
