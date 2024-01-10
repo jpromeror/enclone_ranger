@@ -799,6 +799,7 @@ pub fn join_one<'a>(
                 let len = cdr1_stop1 - cdr1_start1;
                 if cdr1_stop2 - cdr1_start2 == len {
                     let mut diffs = 0;
+                    println!("x1Amino: {:?}",x1.seq_del_amino)
                     for p in 0..len {
                         if x1.seq_del_amino[p + cdr1_start1] != x2.seq_del_amino[p + cdr1_start2] {
                             diffs += 1;
@@ -820,7 +821,6 @@ pub fn join_one<'a>(
                 // this was violated once when using IMGT reference
                 if cdr2_start1 <= cdr2_stop1 {
                     let len = cdr2_stop1 - cdr2_start1;
-                    println!("len = {:?}", len);
                     if cdr2_stop2 - cdr2_start2 == len {
                         let mut diffs = 0;
                         for p in 0..len {
